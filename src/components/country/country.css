@@ -1,0 +1,41 @@
+.country{
+    border: 2px solid green;
+    /* margin: 10px; */
+    padding: 4px;
+    border-radius: 10px;
+}
+.country img{
+    width: 200px;
+    height: 100px;
+}
+.capital{
+    color: red;
+}
+.country-visited{
+    background-color: lightblue;
+}
+.visited-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.visited-btn:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+/* যখন visited হবে */
+.visited-btn.active {
+  background-color: #27ae60;
+}
+
+.visited-btn.active:hover {
+  background-color: #219150;
+}
