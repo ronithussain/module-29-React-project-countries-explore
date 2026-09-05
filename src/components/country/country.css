@@ -1,7 +1,7 @@
 .country{
     border: 2px solid green;
     /* margin: 10px; */
-    padding: 4px;
+    padding: 8px;
     border-radius: 10px;
 }
 .country img{
@@ -15,13 +15,13 @@
     background-color: lightblue;
 }
 .visited-btn {
-  padding: 10px 20px;
+  padding: 4px 20px;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   background-color: #3498db;
   color: white;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 500;
   cursor: pointer;
   transition: 0.3s ease;
 }

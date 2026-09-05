@@ -12,11 +12,13 @@ function App() {
 
   return (
     <>
-      <h1>React Project</h1>
+      <div className="container mx-auto">
+        <h1 className="text-3xl font-bold">React Project Countries...</h1>
 
-      <Suspense fallback={<p>Loading....</p>}>
-        <Countries countriesDataPromise={countriesDataPromise()}></Countries>
-      </Suspense>
+        <Suspense fallback={<p>Loading....</p>}>
+          <Countries countriesDataPromise={countriesDataPromise()}></Countries>
+        </Suspense>
+      </div>
     </>
   );
 }

@@ -4,27 +4,28 @@ import "./country.css";
 
 export interface CountryProps {
   country: CountriesType;
-  handleVisitedCountry: (country: CountriesType) => void;
-  handleVisitedFlag: (flag: string) => void;
+  handleVisitedCountries: (country: CountriesType) => void;
+  handleVisitedFlags: (flag: string) => void;
 }
 
 export default function Country({
   country,
-  handleVisitedCountry,
-  handleVisitedFlag,
+  handleVisitedCountries,
+  handleVisitedFlags,
 }: CountryProps) {
-  const [visited, setVisited] = useState(false);
+  const [visited, setVisited] = useState<boolean>(false);
 
   const handleVisited = () => {
     // setVisited(true);
     // if(visited){
-    //     setVisited(false)
+    //   setVisited(false)
     // }else{
-    //     setVisited(true)
+    //   setVisited(true);
     // }
     setVisited(!visited);
-    handleVisitedCountry(country);
+    handleVisitedCountries(country);
   };
+
   //   const countryStyle = {
   //     backgroundColor: visited  ?'lightgreen' : 'gray'
   //   }
@@ -36,19 +37,20 @@ export default function Country({
       <p>Capital: {country.capital.capital}</p>
 
       {/* Button */}
-      <button
-        onClick={handleVisited}
-        className={visited ? "visited-btn active" : "visited-btn"}
-      >
-        {visited ? "Visited" : "Mark As Visited"}
-      </button>
-      {/* // Recap: */}
-      <button
-        className={visited ? "visited-btn active" : "visited-btn"}
-        onClick={() => handleVisitedFlag(country.flags.flags.png)}
-      >
-        Add Flag as Visited
-      </button>
+      <div className="flex md:flex-row flex-col gap-2">
+        <button
+          onClick={handleVisited}
+          className={visited ? "visited-btn active" : "visited-btn"}
+        >
+          {visited ? "Visited" : "Mark As Visited"}
+        </button>
+        {/* Recap: */}
+        <button 
+        onClick={() => handleVisitedFlags(country.flags.flags.png)}
+        className={visited ? "visited-btn active" : "visited-btn"}>
+          Add Flag as Visited
+        </button>
+      </div>
     </div>
   );
 }
